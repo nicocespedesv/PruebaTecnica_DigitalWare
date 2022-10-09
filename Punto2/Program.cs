@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Punto2
 {
@@ -8,38 +9,44 @@ namespace Punto2
 
         static void Main(string[] args)
         {
-            Array.Sort(myArray);
-            string number = string.Empty;
+            //Array.Sort(myArray);
+            //string number = string.Empty;
 
-            for (int i = 0; i < myArray.Length; i++)
+            //for (int i = 0; i < myArray.Length; i++)
+            //{
+            //    if (i == myArray.Length - 1)
+            //    {
+
+            //    }
+            //    if (myArray[i] == myArray[i + 1])
+            //    {
+            //        if (i == 0)
+            //        {
+            //            number = myArray[i] + ": " + "**";
+            //        }
+            //        else
+            //        {
+            //            if (myArray[i] == myArray[i - 1])
+            //            {
+            //                number += "*";
+            //            }
+            //            else
+            //            {
+            //                number = myArray[i] + ": " + "**";
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine(number);
+            //    }
+
+            //}
+
+            var ListaAgrupada = myArray.ToList().GroupBy(x => x).ToList();
+            foreach (var item in ListaAgrupada)
             {
-                if (i == myArray.Length - 1)
-                {
-
-                }
-                if (myArray[i] == myArray[i + 1])
-                {
-                    if (i == 0)
-                    {
-                        number = myArray[i] + ": " + "**";
-                    }
-                    else
-                    {
-                        if (myArray[i] == myArray[i - 1])
-                        {
-                            number += "*";
-                        }
-                        else
-                        {
-                            number = myArray[i] + ": " + "**";
-                        }
-                    }
-                }
-                else
-                {
-                    Console.WriteLine(number);
-                }
-
+                Console.WriteLine(item.Key + ": " + new string('*', item.ToList().Count()));
             }
         }
     }

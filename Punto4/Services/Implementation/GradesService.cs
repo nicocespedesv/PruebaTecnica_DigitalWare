@@ -1,5 +1,8 @@
-﻿using Punto4.Models;
+﻿using Microsoft.Extensions.Configuration;
+using Punto4.Models.Grades;
 using Punto4.Services.Interface;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -15,7 +18,7 @@ namespace Punto4.Services.Implementation
             connection = config.GetConnectionString("DefaultConnection");
         }
 
-        public List<AcademicRecord> GetGrades(int studentId)
+        public List<AcademicRecord> GetGrades()
         {
             List<AcademicRecord> academicRecords = new List<AcademicRecord>();
             DataTable academicRecordsDt = new DataTable();
@@ -23,7 +26,7 @@ namespace Punto4.Services.Implementation
             SqlConnection conn = new SqlConnection(connection);
             SqlCommand cmd = new SqlCommand("SP_GET_GRADES", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ID", studentId);
+            cmd.Parameters.AddWithValue("@ID", 0);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(academicRecordsDt);
 
@@ -38,8 +41,8 @@ namespace Punto4.Services.Implementation
                 student.FullName = academicRecordsDt.Rows[i]["student_fullname"].ToString();
 
                 AcademicRecord academicRecord = new AcademicRecord();
-                academicRecord.Subject = subject;
-                academicRecord.Student = student;
+                //academicRecord.Subject = subject;
+                //academicRecord.Student = student;
                 academicRecord.FirstPeriodGrade = double.Parse(academicRecordsDt.Rows[i]["ar_firstPeriodGrade"].ToString());
                 academicRecord.SecondPeriodGrade = double.Parse(academicRecordsDt.Rows[i]["ar_secondPeriodGrade"].ToString());
                 academicRecord.ThirdPeriodGrade = double.Parse(academicRecordsDt.Rows[i]["ar_thirdPeriodGrade"].ToString());

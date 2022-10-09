@@ -1,4 +1,4 @@
-﻿namespace Punto4.Models
+﻿namespace Punto4.Models.Grades
 {
     public class Subject
     {

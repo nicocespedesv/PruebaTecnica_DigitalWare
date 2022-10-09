@@ -1,0 +1,52 @@
+﻿@model Punto4.Models.Grades.AcademicRecord
+@{
+    ViewData["Title"] = "Crear registro";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Crear registro académico</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="post" asp-action="CreateRecord">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="StudentId" class="control-label"></label>
+                    <input asp-for="StudentId" class="form-control" />
+                    <span asp-validation-for="StudentId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Subject" class="control-label"></label>
+                    <input asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="FirstPeriodGrade" class="control-label"></label>
+                    <input asp-for="FirstPeriodGrade" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="SecondPeriodGrade" class="control-label"></label>
+                    <input asp-for="SecondPeriodGrade" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="ThirdPeriodGrade" class="control-label"></label>
+                    <input asp-for="ThirdPeriodGrade" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="FourthPeriodGrade" class="control-label"></label>
+                    <input asp-for="FourthPeriodGrade" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

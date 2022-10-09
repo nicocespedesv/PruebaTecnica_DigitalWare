@@ -1,5 +1,5 @@
 CREATE PROCEDURE [dbo].[SP_GET_GRADES]
-	@ID AS INT
+	@ID AS INT = 0
 AS
 
 	SET NOCOUNT ON;
@@ -7,5 +7,5 @@ AS
 	FROM [dbo].[AcademicRecord] AR
 	INNER JOIN [dbo].[Student] ST ON ST.student_id = AR.ar_studentId
 	INNER JOIN [dbo].[Subject] SU ON SU.subject_id = AR.ar_subjectId
-	WHERE AR.ar_studentId = 11111
+	WHERE AR.ar_studentId = @ID OR @ID = 0
 GO

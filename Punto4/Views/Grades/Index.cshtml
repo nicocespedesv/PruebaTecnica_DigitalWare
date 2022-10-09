@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Punto4.Models.Grades.AcademicRecord>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Lista de notas</h3>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success d-block" asp-action="CreateRecord" asp-controller="Grades">Ingresar notas</a> 
+        </div>
+    </div>
+
+    <div class="row">
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <td>@Html.DisplayNameFor(m => m.RecordId)</td>
+                        <td>@Html.DisplayNameFor(m => m.StudentId)</td>
+                        <td>@Html.DisplayNameFor(m => m.Subject)</td>
+                        <td>@Html.DisplayNameFor(m => m.FirstPeriodGrade)</td>
+                        <td>@Html.DisplayNameFor(m => m.SecondPeriodGrade)</td>
+                        <td>@Html.DisplayNameFor(m => m.ThirdPeriodGrade)</td>
+                        <td>@Html.DisplayNameFor(m => m.FourthPeriodGrade)</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.RecordId</td>
+                            <td>@item.StudentId</td>
+                            <td>@item.Subject</td>
+                            <td>@item.FirstPeriodGrade</td>
+                            <td>@item.SecondPeriodGrade</td>
+                            <td>@item.ThirdPeriodGrade</td>
+                            <td>@item.FourthPeriodGrade</td>
+                            <td>
+                                <a asp-controller="Grades" asp-action="UpdateRecord" asp-route-id="@item.RecordId" class="btn btn-outline-warning">Modificar</a>
+                                <a asp-controller="Grades" asp-action="DeleteRecord" asp-route-id="@item.RecordId" class="btn btn-outline-warning">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+            
+        }else{
+            <p>No existen notas.</p>
+        }
+
+
+
+    </div>
+</div>
+
+

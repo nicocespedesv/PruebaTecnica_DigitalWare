@@ -10,7 +10,7 @@ namespace Punto3
         {
             for (int i = 0; i < myArray.Length; i++)
             {
-                for (int j = 0; j < myArray.Length; j++)
+                for (int j = i; j < myArray.Length; j++)
                 {
                     if (myArray[i] + myArray[j] == 10 && myArray[i] != myArray[j])
                     {

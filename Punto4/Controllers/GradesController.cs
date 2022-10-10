@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Punto4.DbConfig;
 using Punto4.Models.Grades;
-using Punto4.Services.Implementation;
-using Punto4.Services.Interface;
 using System.Collections.Generic;
 
 namespace Punto4.Controllers

@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Punto5\Business
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Students-manager", "Punto5\Students-manager\Students-manager.csproj", "{2D019D73-238A-40AF-A8B2-F025CA01DEB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorial", "Factorial\Factorial.csproj", "{1E6A4BC4-2D96-4B70-850F-2C616C29A6F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{2D019D73-238A-40AF-A8B2-F025CA01DEB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D019D73-238A-40AF-A8B2-F025CA01DEB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D019D73-238A-40AF-A8B2-F025CA01DEB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E6A4BC4-2D96-4B70-850F-2C616C29A6F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E6A4BC4-2D96-4B70-850F-2C616C29A6F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E6A4BC4-2D96-4B70-850F-2C616C29A6F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E6A4BC4-2D96-4B70-850F-2C616C29A6F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
